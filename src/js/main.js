@@ -22,7 +22,6 @@ import { phoneMasks } from "./data/phoneMasks.js";
 import { initPreloader } from "./components/preloader.js";
 import { initBurger } from "./components/burger.js";
 import { initAppearance } from "./animations/appearance.js";
-import { initChangeTheme } from "./services/changeTheme.js";
 import { initModal } from "./components/modalManager.js";
  import { initLazySvg } from "./services/lazySvgLoader.js";
 import { initAccordion } from "./components/accordion.js";
@@ -36,13 +35,13 @@ import { initFormHandler } from "./forms/formHandler.js";
 import { initResizableSwiper } from "./services/matchMediaSlider.js";
 import {initMaps} from "./services/lazyMapLoader.js";
 import { initVideoLoader } from "./services/lazyVideoLoader.js";
+import { splitTextIntoSpans } from "./services/splitText.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("The project works");
   initPreloader();
   initBurger("#burger", ".nav", ".nav__list");
   initSliders();
-  initChangeTheme("#theme");
   initModal();
   initAppearance();
   initAccordion("#faq");
@@ -55,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initResizableSwiper();
   initMaps();
   initVideoLoader();
+  // splitTextIntoSpans(".title__text");
   // initUpButton(".footer__up-button");
 
 

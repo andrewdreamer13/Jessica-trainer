@@ -1,32 +1,67 @@
 @font-face {
   font-style: normal;
-  font-weight: 700;
-  src: url("/src/assets/fonts/woff2/Ubuntu-Bold.woff2") format("woff2");
-  font-family: "Ubuntu";
+  font-weight: 600;
+  src: url("/src/assets/fonts/woff2/Oswald-SemiBold.woff2") format("woff2");
+  font-family: "Oswald";
   font-display: swap;
 }
 
 @font-face {
   font-style: normal;
   font-weight: 500;
-  src: url("/src/assets/fonts/woff2/Ubuntu-Medium.woff2") format("woff2");
-  font-family: "Ubuntu";
+  src: url("/src/assets/fonts/woff2/Oswald-Medium.woff2") format("woff2");
+  font-family: "Oswald";
   font-display: swap;
 }
 
 @font-face {
   font-style: normal;
   font-weight: 400;
-  src: url("/src/assets/fonts/woff2/Ubuntu-Regular.woff2") format("woff2");
-  font-family: "Ubuntu";
+  src: url("/src/assets/fonts/woff2/Oswald-Regular.woff2") format("woff2");
+  font-family: "Oswald";
   font-display: swap;
 }
 
 @font-face {
   font-style: normal;
-  font-weight: 300;
-  src: url("/src/assets/fonts/woff2/Ubuntu-Light.woff2") format("woff2");
-  font-family: "Ubuntu";
+  font-weight: 400;
+  src: url("/src/assets/fonts/woff2/PirataOne-Regular.woff2") format("woff2");
+  font-family: "PirataOne";
+  font-display: swap;
+}
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  src: url("/src/assets/fonts/woff2/WorkSans-Regular.woff2") format("woff2");
+  font-family: "WorkSans";
+  font-display: swap;
+}
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  src: url("/src/assets/fonts/woff2/WorkSans-Medium.woff2") format("woff2");
+  font-family: "WorkSans";
+  font-display: swap;
+}
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+  src: url("/src/assets/fonts/woff2/WorkSans-SemiBold.woff2") format("woff2");
+  font-family: "WorkSans";
+  font-display: swap;
+}
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  src: url("/src/assets/fonts/woff2/WorkSans-Bold.woff2") format("woff2");
+  font-family: "WorkSans";
+  font-display: swap;
+}
+@font-face {
+  font-style: normal;
+  font-weight: 800;
+  src: url("/src/assets/fonts/woff2/WorkSans-Black.woff2") format("woff2");
+  font-family: "WorkSans";
   font-display: swap;
 }
 

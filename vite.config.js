@@ -24,13 +24,12 @@ export default defineConfig(({ mode }) => {
   const isGH = mode === "github";
 
   return {
-    
     base: isGH ? `/${rootFolder}/` : "./",
 
     plugins: [
       injectHTML(),
       Sitemap({
-        hostname: "https://your-client-domain.com",
+        hostname: "https://jessica-trainer.com/",
         // dynamicRoutes: ["/about", "/contacts", "/services"],
         readable: true,
       }),

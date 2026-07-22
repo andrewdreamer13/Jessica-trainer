@@ -1,4 +1,3 @@
-
 <!--
   Main entry HTML template for the homepage, assembling modular layout partials via Vite HTML inject and establishing data-attribute containers for lazy-loaded media.
 
@@ -12,17 +11,16 @@
 <html lang="en">
   <load
     src="/src/html/components/head.html"
-    title="[Page Title: 60-70 characters max. Brand name + primary keyword]"
-    description="[Page Description: 150-160 characters max. Engaging snippet for Google search results]"
-    keywords="[Comma-separated keywords. E.g.: hvac design, ventilation installation, custom kitchen]"
-    site-url="https://[your-client-domain.com]/"
-    og-image="img/og-preview.jpg"
-    theme-color="[HEX color code for mobile browsers address bar. E.g.: #0f172a]"
+    title="Jessica Tailor-personal trainer"
+    description="Achieve your fitness goals with Jessica Tailor. Professional personal training, HIIT workouts, strength exercises, and custom nutrition plans. Unleash your potential!"
+    keywords="personal trainer, fitness coach, HIIT workouts, strength training, virtual training sessions, custom nutrition, personal coaching, Jessica Tailor"
+    site-url="https://jessica-trainer.com/"
+    og-image="img/og-preview.webp"
+    theme-color="#343434"
   />
   <body>
     <!-- the way to use vite-plugin-html-inject -->
-    <load src="/src/html/layout/header.html" />
-    <load src="/src/html/sections/hero.html" />
+    <load src="/src/html/sections/header.html" />
 
     <main>
       <!-- ways to the images -->
@@ -51,7 +49,7 @@
     <load src="/src/html/components/preloader.html" />
     <load src="/src/html/components/cookie-banner.html" />
 
-    <load src="/src/html/layout/footer.html" />
+    <load src="/src/html/sections/footer.html" />
 
     <div class="card">
       <h2 class="card__title">Card title</h2>
@@ -128,5 +126,9 @@
       type="module"
       src="/src/js/main.js"
     ></script>
+
+    <header class="header"></header>
+    <header class="hero"></header>
+    <section class="hero"></section>
   </body>
 </html>
