@@ -1,10 +1,4 @@
 
-/**
- * Configures Vite build tool, including base paths, HTML injection, sitemap generation, image/SVG optimization, PostCSS processing, minification, and asset bundling.
- * 
- * 1. `defineConfig` - Returns the main Vite configuration dynamically based on the build mode (standard relative path or GitHub Pages subpath).
- * 2. `assetFileNames` - Categorizes and routes compiled build assets (images, fonts, CSS) into organized subdirectories with hashed filenames.
- */
 
 import { defineConfig } from "vite";
 import path from "path";
@@ -30,7 +24,6 @@ export default defineConfig(({ mode }) => {
       injectHTML(),
       Sitemap({
         hostname: "https://jessica-trainer.com/",
-        // dynamicRoutes: ["/about", "/contacts", "/services"],
         readable: true,
       }),
       viteImagemin({

@@ -1,21 +1,18 @@
 @use "sass:map";
 
 // Typography
-$font1:'PirataOne';
-$font2:'Oswald';
-$font3:'WorkSans';
-
+$font1: "PirataOne", cursive, serif;
+$font2: "Oswald", 'sans-serif';
+$font3: "WorkSans", sans-serif;
 
 // Colors
-$color1:  #2e353c;
+$color1: #2e353c;
 $color2: #59636a;
 $color3: #ed042e;
 $color4: #ffffff;
 $color5: #343434;
 
-
 // System and Status Colors
-$colorError:    #ed042e;
-$colorSuccess:  #2ecc71;
-$colorModalBg:  #000000d1;
-
+$colorError: #ed042e;
+$colorSuccess: #2ecc71;
+$colorModalBg: #000000d1;

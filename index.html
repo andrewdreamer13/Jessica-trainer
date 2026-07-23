@@ -1,12 +1,3 @@
-<!--
-  Main entry HTML template for the homepage, assembling modular layout partials via Vite HTML inject and establishing data-attribute containers for lazy-loaded media.
-
-  1. `<load>` components - Injects modular HTML partials including head metadata, headers, footers, page sections, interactive UI elements, and modal dialogs.
-  2. `data-svg-receiver` containers - Serves as placeholders for lazy-loading inline SVG graphics via template clones or external fetches.
-  3. `data-map-receiver` containers - Defines mount points for deferred loading of iframe Google Maps or custom interactive maps.
-  4. `data-video-receiver` containers - Sets up deferred loading targets for local WebM videos or embedded YouTube players.
--->
-
 <!doctype html>
 <html lang="en">
   <load
@@ -19,45 +10,31 @@
     theme-color="#343434"
   />
   <body>
-    <!-- the way to use vite-plugin-html-inject -->
     <load src="/src/html/sections/header.html" />
-
+    <svg class="lightning">
+      <use href="#icons-lightning"></use>
+    </svg>
     <main>
-      <!-- ways to the images -->
+      <load src="/src/html/sections/expertise.html" />
+      <load src="/src/html/sections/services.html" />
+      <load src="/src/html/sections/testimonials.html" />
+      <load src="/src/html/sections/contact.html" />
       <img
         class="image"
-        src="src/assets/img/webp/beach.webp"
+        src="src/assets/img/webp/services.webp"
         alt="beach"
         loading="lazy"
         width="550"
         height="385"
       />
-
-      <load src="/src/html/components/accordion.html" />
-      <load src="/src/html/components/main-slider.html" />
-      <load src="/src/html/components/tabs.html" />
-      <load
-        class="form-test"
-        src="/src/html/components/form.html"
-        id="form1"
-      />
     </main>
-    <!-- the way to use vite-plugin-html-inject -->
-    <load src="/src/html/components/modal-content1.html" />
-    <load src="/src/html/components/modal-content2.html" />
+
     <load src="/src/html/components/modal-success.html" />
     <load src="/src/html/components/preloader.html" />
     <load src="/src/html/components/cookie-banner.html" />
 
     <load src="/src/html/sections/footer.html" />
 
-    <div class="card">
-      <h2 class="card__title">Card title</h2>
-      <p class="card__text">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam sequi
-        ipsa ex libero dicta fugit, similique molestiae officia omnis iste?
-      </p>
-    </div>
     <!-- html code for lazySvgLoader with templates -->
     <div
       class="icon-wrapper"
