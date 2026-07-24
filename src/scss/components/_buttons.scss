@@ -1,19 +1,25 @@
 @use "../tools" as t;
 
 .button {
-  font-family:t.$font2;
-font-weight: 600;
-font-size: 15px;
-color:t.$color4;
-padding: 16px 48px;
-background-color: t.$color3;
-transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 16px 48px;
+  background-color: t.$color3;
+  color: t.$color4;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: t.$font2;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 
-@media (hover:hover) {
-  &:hover {
-background-color: t.$color4;
-color:t.$color5;
-
+  @media (hover: hover) {
+    &:hover {
+      background-color: t.$color4;
+      color: t.$color5;
+    }
   }
-}
+
+  &:active {
+      background-color: t.$color4;
+      color: t.$color5;
+    }
 }

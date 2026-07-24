@@ -1,4 +1,4 @@
-// utils/splitText.js
+
 export function splitTextIntoSpans(selector) {
   const elements = document.querySelectorAll(selector);
 

@@ -12,6 +12,7 @@ body {
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+    border-image: url();
 }
 
 .lightning{
@@ -22,4 +23,8 @@ body {
  &:hover {
    fill: rgb(0, 179, 255);
  }
+}
+
+.header__arrow-down {
+ 
 }

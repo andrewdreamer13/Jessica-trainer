@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initResizableSwiper();
   initMaps();
   initVideoLoader();
-  // splitTextIntoSpans(".title__text");
+   splitTextIntoSpans(".header__title");
   // initUpButton(".footer__up-button");
 
 

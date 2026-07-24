@@ -1,29 +1,64 @@
-
 @use "../tools" as t;
 
 .logo {
-  border:1px solid var(--theme-accent);
-  border-radius: .5em ;
-  padding: .3em 1em ;
-  font-size: 32px;
-  color:var(--theme-accent);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: block;
+  width: fit-content;
+  max-width: 250px;
+  padding: 0 8px;
+  color: t.$color4;
 
-  &:hover {
-    background-color: var(--theme-accent);
-    color:rgba(var(--theme-bg));
-    
+  &__top {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    font-weight: 400;
+    font-size: 44px;
+    @include t.fluid-prop("font-size", 35, 44, 320, 768);
+
+    line-height: 1;
+    font-family: t.$font1;
+    letter-spacing: 0.02em;
+    text-align: center;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 110%;
+      height: 6px;
+      transform: translateX(-50%);
+      background-image: url("/src/assets/icons/logo-line.svg");
+      background-position: center center;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      content: "";
+    }
+    &::after {
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      width: 110%;
+      height: 6px;
+      transform: translateX(-50%);
+      background-image: url("/src/assets/icons/logo-line.svg");
+      background-position: center center;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      content: "";
+    }
   }
 
-  &:active {
-    transform: translateY(0); 
+  &__bottom {
+    display: block;
+    width: 100%;
+    font-weight: 500;
+    font-size: 12px;
+    @include t.fluid-prop("font-size", 9, 12, 320, 768);
+    padding-top: 6px;
+    font-family: t.$font2;
+    letter-spacing: 0.02em;
+    text-align: center;
+    text-transform: uppercase;
   }
-}
-
-@media (max-width: 768px) {
-.logo {
-  font-size: 22px;
-}
-
-  
 }

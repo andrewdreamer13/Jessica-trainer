@@ -1,19 +1,50 @@
-<header class="header" id="header">
-  <div class="header__inner"> <a class="logo" href="/">
-      Logo
-    </a>
-    
-    <nav class="nav">
+<header
+  class="header"
+  id="header"
+>
+  <img
+    class="header__bg"
+    src="/src/assets/img/webp/header.webp"
+    alt="Jessica Taylor personal trainer"
+    fetchpriority="high"
+  />
+  <img
+    class="header__bg-decor"
+    src="/src/assets/icons/header-decor.svg"
+    alt=""
+    fetchpriority="high"
+  />
+
+  <div class="container">
+    <div class="header__inner">
+      <load
+        class="header__logo"
+        src="/src/html/components/logo.html"
+      />
+     <nav class="nav header__nav">
       <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="404.html">page 404</a></li>
-        <li class="nav__item"><a class="nav__link" href="#!">nav link</a></li>
-        <li class="nav__item"><a class="nav__link" href="#!">nav link</a></li>
-        <li class="nav__item"><a class="nav__link" href="#!">nav link</a></li>
+        <li class="nav__item"><a class="nav__link" href="#expertise">expertise</a></li>
+        <li class="nav__item"><a class="nav__link" href="#services">services</a></li>
+        <li class="nav__item"><a class="nav__link" href="#testimonials">testimonials</a></li>
+        <li class="nav__item"><a class="nav__link" href="#contact">contact</a></li>
       </ul>
-    </nav>
-
-    
-
-    <load src="/src/html/components/burger.html" />
+     </nav>  
+      <div class="header__content">
+        <h1 class="header__title">Unleash your potential</h1>
+        <p class="header__description">
+          Push yourself to the limit with Jessica's expert guidance.
+        </p>
+        <button class="button header__button">book consultation</button>
+      </div>
+      <a
+        class="header__scroll"
+        href="#expertise"
+        aria-label="scroll to expertise section"
+      >
+        <svg class="header__scroll-arrow">
+          <use href="#icons-arrow-down"></use>
+        </svg>
+      </a>
+    </div>
   </div>
 </header>
