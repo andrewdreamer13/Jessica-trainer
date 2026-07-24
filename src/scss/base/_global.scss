@@ -1,6 +1,8 @@
 @use "../tools" as t;
 
-
+:root {
+  @include t.fluid-prop("--clip-offset", 20, 60, 390, 1440);
+}
 
 body {
   background-color: t.$color1;
@@ -25,6 +27,3 @@ body {
  }
 }
 
-.header__arrow-down {
- 
-}

@@ -3,11 +3,7 @@
 .header {
   position: relative;
   width: 100%;
-  @include t.fluid-prop("--clip-offset", 20, 60, 390, 1440);
-
   overflow-x: hidden;
-
-  background-color: #323445;
   clip-path: polygon(
     0 0,
     100% 0,
@@ -46,7 +42,7 @@
     margin: 0 auto;
     @include t.flex-mix(flex-start, center, column, 0);
     @include t.fluid-prop("padding-top", 30, 40, 320, 1440);
-    @include t.fluid-prop("padding-bottom", 30, 50, 320, 1440);
+    @include t.fluid-prop("padding-bottom", 30, 60, 320, 1440);
   }
 
   &__logo {
