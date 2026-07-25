@@ -4,7 +4,6 @@
   position: relative;
   width: 100%;
   margin-top: calc(-1 * var(--clip-offset));
-  padding: 88px 0 142px 0;
   @include t.fluid-prop("padding-top", 44, 88, 320, 1440);
   @include t.fluid-prop("padding-bottom", 71, 142, 320, 1440);
 
@@ -17,7 +16,8 @@
   );
 
   &__title {
-    margin-bottom: 67px;
+  @include t.fluid-prop("margin-bottom", 34, 67, 320, 1440);
+    
   }
 
   &__cards {
