@@ -123,8 +123,8 @@
 
   &__item {
     width: 100%;
-    max-width: 840px;
-    @include t.fluid-prop("max-width", 290, 840, 320, 1200);
+    
+    @include t.fluid-prop("max-width", 290, 840, 320, 1440);
 
     &.is-expanded {
       .testimonials__text {
@@ -196,8 +196,7 @@
       calc((100vw - var(--container-width)) / 2),
       var(--container-padding)
     );
-    bottom: -44px;
-    @include t.fluid-prop("bottom", -73, -44, 320, 1440);
+    @include t.fluid-prop("bottom", -80, -44, 320, 1440);
     @include t.fluid-prop("width", 250, 427, 320, 1440);
     z-index: 10;
     pointer-events: none;
