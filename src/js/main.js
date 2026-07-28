@@ -1,11 +1,3 @@
-
-/**
- * Main application entry point that imports global styles and modules, initializing all core UI components, animations, form handlers, and media loaders upon DOM ready.
- * 
- * 1. `DOMContentLoaded` listener - Bootstraps application interactive components, custom selects, theme switching, sliders, maps, and video loaders once the DOM is ready.
- * 2. Async SVG Template Loader (IIFE) - Dynamically imports local SVG template assets asynchronously and triggers the lazy SVG rendering engine with error fallback handling.
- */
-
 import "../scss/main.scss";
 import "virtual:svg-icons-register";
 
@@ -23,19 +15,20 @@ import { initPreloader } from "./components/preloader.js";
 import { initBurger } from "./components/burger.js";
 import { initAppearance } from "./animations/appearance.js";
 import { initModal } from "./components/modalManager.js";
- import { initLazySvg } from "./services/lazySvgLoader.js";
+import { initLazySvg } from "./services/lazySvgLoader.js";
 import { initAccordion } from "./components/accordion.js";
 import { initFocusManager } from "./services/focusManager.js";
 // import {initUpButton} from "./components/upButton/js";
-import { initSliders } from "./components/sliders.js";
+import { initSliders, testimonialsSwiper } from "./components/sliders.js";
 import { initTabs } from "./components/tabs.js";
 import { initCookieBanner } from "./components/cookieBanner.js";
 import { initCustomSelect } from "./components/customSelect.js";
 import { initFormHandler } from "./forms/formHandler.js";
 import { initResizableSwiper } from "./services/matchMediaSlider.js";
-import {initMaps} from "./services/lazyMapLoader.js";
+import { initMaps } from "./services/lazyMapLoader.js";
 import { initVideoLoader } from "./services/lazyVideoLoader.js";
 import { splitTextIntoSpans } from "./services/splitText.js";
+import { initExpandableText } from "./services/expandableText.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("The project works");
@@ -54,20 +47,24 @@ document.addEventListener("DOMContentLoaded", () => {
   initResizableSwiper();
   initMaps();
   initVideoLoader();
-   splitTextIntoSpans(".header__title");
+  splitTextIntoSpans(".header__title");
   // initUpButton(".footer__up-button");
+  // initExpandableText("[data-expandable]");
+  initExpandableText("[data-expandable]", {
+    onToggle: () => {
+      if (!testimonialsSwiper) return;
 
+      testimonialsSwiper.updateAutoHeight(300);
+    },
+  });
 
-(async () => {
-  try {
-    await import("./services/svgTemplates.js");
-    initLazySvg();
-  } catch (error) {
-    console.error("SVG template lazy-loading error:", error);
-    initLazySvg();
-  }
-})();
-
-
-
+  (async () => {
+    try {
+      await import("./services/svgTemplates.js");
+      initLazySvg();
+    } catch (error) {
+      console.error("SVG template lazy-loading error:", error);
+      initLazySvg();
+    }
+  })();
 });

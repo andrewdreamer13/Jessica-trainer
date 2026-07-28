@@ -1,37 +1,35 @@
-
-/**
- * Initializes Swiper slider instances with bundled CSS styles and custom control configurations (pagination, navigation buttons, and scrollbars).
- * 
- * 1. `initSliders` - Serves as the entry point wrapper to trigger slider setup routines across the application.
- * 2. `initMainSlider` - Instantiates a centered, looping Swiper carousel for `.main-slider` containers with interactive navigation, pagination, and scrollbar controls.
- */
-
 import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
+import { updatePaginationPosition } from "../services/dynamicPagination";
 
+export let testimonialsSwiper = null;
 export const initSliders = () => {
-  initMainSlider();
+  initTestimonialsSlider();
 };
 
-const initMainSlider = () => {
-  const swiper = new Swiper(".main-slider", {
-    loop: true,
+const initTestimonialsSlider = () => {
+  testimonialsSwiper = new Swiper(".testimonials__slider", {
     speed: 500,
     centeredSlides: true,
-    slidesPerView: 2,
-    spaceBetween: 20,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    autoHeight: true,
 
     pagination: {
       el: ".swiper-pagination",
+      clickable: true,
     },
 
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".testimonials__arrow--next",
+      prevEl: ".testimonials__arrow--prev",
     },
-
-    scrollbar: {
-      el: ".swiper-scrollbar",
+    on: {
+      init: (swiper) => updatePaginationPosition(swiper),
+      slideChange: (swiper) => updatePaginationPosition(swiper),
+      resize: (swiper) => updatePaginationPosition(swiper),
     },
   });
+
+ 
 };

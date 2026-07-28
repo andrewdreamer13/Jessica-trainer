@@ -2,6 +2,8 @@
 
 :root {
   @include t.fluid-prop("--clip-offset", 20, 60, 390, 1440);
+    --container-width: 1200px;
+  --container-padding: 20px;
 }
 
 body {

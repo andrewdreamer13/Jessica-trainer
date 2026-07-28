@@ -1,0 +1,220 @@
+@use "../tools" as t;
+
+.testimonials {
+  position: relative;
+  width: 100%;
+  margin-top: calc(-1 * var(--clip-offset));
+  isolation: isolate;
+  @include t.fluid-prop("padding-top", 44, 88, 320, 1440);
+  @include t.fluid-prop("padding-bottom", 114, 195, 320, 1440);
+
+  &__shape {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    clip-path: polygon(
+      0 0,
+      100% var(--clip-offset),
+      100% calc(100% - var(--clip-offset)),
+      0 100%
+    );
+  }
+
+  &__title {
+    @include t.fluid-prop("margin-bottom", 70, 82, 320, 1440);
+  }
+
+  &__pagination {
+    display: none;
+    position: absolute;
+    bottom: 60px !important;
+    left: 50% !important;
+    width: 80px !important;
+    height: 16px;
+    overflow: hidden;
+    transform: translateX(-50%);
+
+    @media (max-width: 480px) {
+      display: block;
+    }
+  }
+
+  &__slider {
+    padding-bottom: 20px !important;
+
+    .swiper-slide {
+      width: 100%;
+      @include t.flex-mix(center, center);
+    }
+
+    .swiper-pagination {
+      position: absolute;
+      left: 0;
+      width: auto !important;
+      transition: transform 0.5s ease;
+      @include t.flex-mix(flex-start, center, row, 8px);
+      bottom: 3px !important;
+    }
+
+    .swiper-pagination-bullet {
+      flex: 0 0 10px;
+      width: 10px;
+      height: 10px;
+      margin: 0 4px;
+      background-color: t.$color4;
+      transition:
+        background-color 0.5s ease,
+        transform 0.5s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+      transform: scale(1.2);
+    }
+  }
+
+  &__nav {
+    @include t.flex-mix(flex-end, center, row, 15px);
+    padding-right: 20px;
+
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
+
+  &__arrow {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: t.$color2;
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease;
+    @include t.flex-mix(center, center);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: t.$color4;
+      }
+
+      &:hover .testimonials__icon {
+        stroke: t.$color2;
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+      background-color: t.$color4;
+    }
+
+    &:active .testimonials__icon {
+      stroke: t.$color2;
+    }
+  }
+
+  &__icon {
+    width: 17px;
+    height: 16px;
+    fill: none;
+    stroke: t.$color4;
+    transition: stroke 0.3s ease;
+  }
+
+  &__item {
+    width: 100%;
+    max-width: 840px;
+    @include t.fluid-prop("max-width", 290, 840, 320, 1200);
+
+    &.is-expanded {
+      .testimonials__text {
+        max-height: 1000px;
+        -webkit-line-clamp: unset;
+        overflow: visible;
+        transition: max-height 0.4s ease-in-out;
+      }
+    }
+  }
+
+  &__quote {
+    position: relative;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+  }
+
+  &__text {
+    --expandable-lines: 5;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--expandable-lines);
+
+    overflow: hidden;
+    color: t.$color4;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.25;
+    font-family: t.$font3;
+    letter-spacing: 0.01em;
+    text-overflow: ellipsis;
+
+    @media (max-width: 768px) {
+      --expandable-lines: 10;
+    }
+  }
+
+  &__author {
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  &__more-btn {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    color: t.$color3;
+    font-weight: 600;
+    font-size: 14px;
+    text-underline-offset: 3px;
+    transition: color 0.3s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        color: t.$color4;
+        text-decoration: underline;
+      }
+    }
+
+    &:focus-visible {
+      text-decoration: underline;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    right: max(
+      calc((100vw - var(--container-width)) / 2),
+      var(--container-padding)
+    );
+    bottom: -44px;
+    @include t.fluid-prop("bottom", -73, -44, 320, 1440);
+    @include t.fluid-prop("width", 250, 427, 320, 1440);
+    z-index: 10;
+    pointer-events: none;
+  }
+}
+
+[data-expandable].is-expanded [data-expandable-content] {
+  -webkit-line-clamp: unset;
+}
+
+[data-expandable-button] {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
