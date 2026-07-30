@@ -123,7 +123,7 @@
 
   &__item {
     width: 100%;
-    
+
     @include t.fluid-prop("max-width", 290, 840, 320, 1440);
 
     &.is-expanded {

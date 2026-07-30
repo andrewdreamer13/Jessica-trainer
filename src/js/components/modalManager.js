@@ -1,11 +1,5 @@
 
-/**
- * Manages accessible modal dialog windows, including open and close state transitions, background scroll locking, focus trapping, and keyboard/backdrop dismissal handlers.
- * 
- * 1. `openModal` - Displays the target modal element, updates ARIA attributes, locks body scrolling, and delegates focus trapping to `focusManager`.
- * 2. `closeModal` - Dismisses the active modal, restores background scrolling, updates ARIA attributes, and releases focus trapping.
- * 3. `initModal` - Sets up global click listeners for trigger elements, backdrop overlays, and close buttons, as well as an Escape key handler for modal dismissal.
- */
+
 
 import { openScope, closeScope } from "../services/focusManager.js";
 
@@ -64,7 +58,7 @@ export const initModal = () => {
 
   document.querySelectorAll(".modal").forEach((modal) => {
     modal.addEventListener("click", (e) => {
-      if (e.target === modal || e.target.closest(".modal__close-btn")) {
+      if (e.target === modal || e.target.closest(".success-modal__close-btn")) {
         closeModal();
       }
     });
