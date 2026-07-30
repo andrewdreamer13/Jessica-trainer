@@ -1,13 +1,14 @@
 @use "../tools" as t;
 
 .button {
-  padding: 16px 48px;
+  padding: 15px 48px;
   background-color: t.$color3;
   color: t.$color4;
   font-weight: 600;
   font-size: 15px;
   font-family: t.$font2;
   letter-spacing: 0.01em;
+  line-height: 1;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;

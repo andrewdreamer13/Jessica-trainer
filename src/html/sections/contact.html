@@ -1,14 +1,25 @@
-<section class="contact" id="contact">
+<section
+  class="contact"
+  id="contact"
+>
+  <div class="contact__shape"></div>
   <div class="container">
-     <h2 class="title">
-        <span class="title__line"></span>
-        <span class="title__text">section title</span>
-        <span class="title__line"></span>
-      </h2>
-      <load
-        class="form-test"
-        src="/src/html/components/form.html"
-        id="form1"
-      />
+    <h2 class="title contact__title">
+      <span class="title__line"></span>
+      <span class="title__text">contact</span>
+      <span class="title__line"></span>
+    </h2>
+    <p class="contact__text">
+      Ready to start your fitness journey with me? Fill out the booking form
+      below to schedule your first session, or reach out to me directly at
+      <a class="contact__link" href="mailto:jessica@jessicataylor.com">jessica@jessicataylor.com</a>
+      with any questions or concerns.
+    </p>
+    <load class="contact__form" id="contact-form" src="/src/html/components/form.html" />
   </div>
+  <img
+    class="contact__bg"
+    src="/src/assets/img/webp/contact.webp"
+    alt="Jessica makes exercise"
+  />
 </section>

@@ -1,0 +1,74 @@
+@use "../tools" as t;
+
+.contact {
+  position: relative;
+  width: 100%;
+  margin-top: calc(-1 * var(--clip-offset));
+  @include t.fluid-prop("padding-top", 108, 88, 320, 1440);
+  @include t.fluid-prop("padding-bottom", 114, 195, 320, 1440);
+
+  &__shape {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background-color: t.$color4;
+
+    clip-path: polygon(
+      0 var(--clip-offset),
+      100% 0,
+      100% 100%,
+      0 calc(100% - var(--clip-offset))
+    );
+  }
+
+  .title {
+    margin-bottom: 48px;
+
+    &__line {
+      background-color: t.$color1;
+    }
+
+    &__text {
+      color: t.$color1;
+    }
+  }
+
+  &__text {
+    max-width: 600px;
+    margin: 0 auto;
+    @include t.fluid-prop("margin-bottom", 32, 48, 390, 1440);
+
+    color: t.$color1;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.3;
+    font-family: t.$font3;
+    letter-spacing: 0.01em;
+  }
+
+  &__link {
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  &__form {
+    margin-bottom: 20px;
+  }
+
+  &__bg {
+    z-index: 1;
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    @include t.fluid-prop("bottom", -60, -70, 390, 1440);
+    transform: translateX(-50%);
+    @include t.fluid-prop("width", 350, 560, 390, 1440);
+
+    @media (max-width: 390px) {
+      @include t.fluid-prop("width", 290, 350, 320, 390);
+    }
+  }
+}

@@ -6,7 +6,7 @@
   margin-top: calc(-1 * var(--clip-offset));
   isolation: isolate;
   @include t.fluid-prop("padding-top", 44, 88, 320, 1440);
-  @include t.fluid-prop("padding-bottom", 114, 195, 320, 1440);
+  @include t.fluid-prop("padding-bottom", 143, 203, 320, 1440);
 
   &__shape {
     z-index: -1;
@@ -198,7 +198,7 @@
     );
     @include t.fluid-prop("bottom", -80, -44, 320, 1440);
     @include t.fluid-prop("width", 250, 427, 320, 1440);
-    z-index: 10;
+    z-index: 1;
     pointer-events: none;
   }
 }
