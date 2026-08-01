@@ -11,100 +11,22 @@
   />
   <body>
     <load src="/src/html/sections/header.html" />
-   
+
     <main>
       <load src="/src/html/sections/expertise.html" />
       <load src="/src/html/sections/services.html" />
       <load src="/src/html/sections/testimonials.html" />
       <load src="/src/html/sections/contact.html" />
-      <img
-        class="image"
-        src="src/assets/img/webp/services.webp"
-        alt="beach"
-        loading="lazy"
-        width="550"
-        height="385"
-      />
     </main>
-
+    <load src="/src/html/sections/footer.html" />
     <load src="/src/html/components/modal-success.html" />
     <load src="/src/html/components/preloader.html" />
     <load src="/src/html/components/cookie-banner.html" />
 
-    <load src="/src/html/sections/footer.html" />
-
-    <!-- html code for lazySvgLoader with templates -->
-    <div
-      class="icon-wrapper"
-      data-svg-receiver
-      data-svg-id="vent"
-    ></div>
-    <div
-      class="icon-wrapper"
-      data-svg-receiver
-      data-svg-id="vent"
-    ></div>
-    <div
-      class="icon-wrapper"
-      data-svg-receiver
-      data-svg-id="vent"
-    ></div>
-
-    <!-- html code for lazySvgLoader with fetch -->
-
-    <div
-      class="icon-wrapper"
-      data-svg-receiver
-      data-svg-id="vent"
-      data-svg-src="/src/html/inline-icons/vent.html"
-    ></div>
-
-     <svg class="lightning">
-      <use href="#icons-lightning"></use>
-    </svg>
-
-    <!-- html code for lazyMapLoader -->
-
-    <!-- Standart iframe -->
-    <div
-      class="map-receiver"
-      data-map-receiver
-      data-map-type="iframe"
-      data-map-src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d164163.50631451618!2d36.3018588!3d49.9915823!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sua!4v1784274912178!5m2!1sen!2sua"
-    ></div>
-
-    <!-- Custom map  -->
-    <div
-      class="map-receiver"
-      data-map-receiver
-      data-map-type="custom"
-      data-map-id="london-office"
-      data-map-lat="51.5074"
-      data-map-lng="-0.1278"
-    ></div>
-
-    <!-- local video -->
-    <div
-      class="video-wrapper"
-      data-video-receiver
-      data-video-type="local"
-      data-video-src="/assets/video/test-video.webm"
-      data-video-poster="/assets/img/poster.webp"
-    ></div>
-
-    <!-- youtube video -->
-    <div
-      class="video-wrapper"
-      data-video-receiver
-      data-video-type="youtube"
-      data-video-src="dQw4w9WgXcQ"
-      data-video-poster="/assets/img/poster.webp"
-    ></div>
-
+    
     <script
       type="module"
       src="/src/js/main.js"
     ></script>
-
   </body>
 </html>

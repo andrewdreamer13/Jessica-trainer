@@ -1,3 +1,87 @@
+@use "../tools" as t;
+
 .footer {
-  background-color: #fff;
+  position: relative;
+  width: 100%;
+  margin-top: calc(-1 * var(--clip-offset));
+  isolation: isolate;
+  @include t.fluid-prop("padding-top", 145, 150, 320, 1440);
+  @include t.fluid-prop("padding-bottom", 42, 62, 320, 1440);
+  &__shape {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    clip-path: polygon(0 0, 100% var(--clip-offset), 100% 100%, 0 100%);
+  }
+
+  &__bg {
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 90%;
+    transform: translate(-50%, -46%);
+    fill: t.$color3;
+  }
+
+  &__inner {
+    width: 100%;
+    min-height: 300px;
+    @include t.flex-mix(flex-start, center, column);
+  }
+
+  &__logo {
+    max-width: 195px;
+    margin-bottom: 35px;
+
+    .logo__top {
+      padding: 8px 0;
+      font-size: 34px;
+    }
+    .logo__bottom {
+      font-size: 10px;
+    }
+  }
+
+  &__socials {
+    @include t.flex-mix(center, center, row, 20px);
+  }
+
+  &__social-link {
+    @include t.flex-mix(center, center);
+
+    @media (hover: hover) {
+      &:hover .footer__social-icon {
+        scale: 1.2;
+        fill: t.$color1;
+      }
+    }
+  }
+
+  &__social-icon {
+    width: 30px;
+    height: 30px;
+    fill: t.$color4;
+    transition:
+      scale 0.3s ease,
+      fill 0.3s ease;
+  }
+
+  &__copyright {
+    margin-top: auto;
+    color: t.$color4;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+    font-family: t.$font3;
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+
+  &__author {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
 }
