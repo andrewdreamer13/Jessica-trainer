@@ -16,26 +16,25 @@
     opacity 0.5s ease;
 
   &--show {
-   display: block;
-   @keyframes slideUp {
+    display: block;
+    @keyframes slideUp {
       to {
-        opacity: 1;
         transform: translateY(0);
+        opacity: 1;
       }
     }
     animation: slideUp 0.5s forwards;
   }
-  
 
   &__container {
     display: flex;
     flex-direction: column;
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 25px 15px;
     gap: 15px;
     border-radius: 12px;
-    background-color: #fff;
+    background-color: t.$color4;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     pointer-events: auto;
 
@@ -48,9 +47,10 @@
 
   &__text {
     margin: 0;
-    color: #333;
+    color: t.$color1;
     font-size: 14px;
     line-height: 1.4;
+    font-family: t.$font3;
   }
 
   &__buttons {
@@ -64,26 +64,28 @@
     border: none;
     border-radius: 6px;
     font-size: 14px;
+    font-family: t.$font3;
     transition: all 0.3s ease;
 
     &--accept {
-      background-color: #000;
-      color: #fff;
+      background-color: t.$color1;
+      color: t.$color4;
 
       @media (hover: hover) {
         &:hover {
-          background-color: #333;
+          background-color: t.$color2;
         }
       }
     }
 
     &--decline {
-      background-color: #f0f0f0;
-      color: #333;
+      border: 1px solid t.$color2;
+      color: t.$color1;
 
       @media (hover: hover) {
         &:hover {
-          background-color: #e0e0e0;
+          background-color: t.$color2;
+          color: t.$color4;
         }
       }
     }
