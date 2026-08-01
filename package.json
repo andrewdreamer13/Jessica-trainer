@@ -31,8 +31,6 @@
   },
   "dependencies": {
     "gsap": "^3.15.0",
-    "mapbox-gl": "^3.26.0",
-    "plyr": "^3.8.4",
     "swiper": "^12.2.0"
   }
 }

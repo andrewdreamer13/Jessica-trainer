@@ -1,57 +1,52 @@
 @use "../base";
 @use "../tools" as t;
 
-
-
 .page-404 {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   padding: 0 15px;
-  background-color:t.$color1;
+  background-color: t.$color1;
   color: t.$color4;
   font-family: t.$font3;
   text-align: center;
 
   &__container {
-    max-width: 480px;
     width: 100%;
+    max-width: 480px;
   }
 
   &__badge {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: t.$colorError;
-    border:1px solid  t.$color2;
-    border-radius: 10px;
     margin-bottom: 1.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid t.$color2;
+    border-radius: 10px;
+    color: t.$colorError;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
-
 
   &__title {
-    font-size: 2.25rem;
-    font-weight: 800;
-    line-height: 1.2;
     margin-bottom: 1rem;
+    font-weight: 800;
+    font-size: 2.25rem;
+    line-height: 1.2;
   }
 
-  
   &__text {
+    margin-bottom: 2rem;
+    color: t.$color4;
     font-size: 1rem;
     line-height: 1.6;
-    color: t.$color4;;
-    margin-bottom: 2rem;
   }
 
-  
   &__counter {
-    font-weight: 700;
     color: t.$colorError;
+    font-weight: 700;
   }
 
   &__actions {
@@ -65,12 +60,14 @@
     align-items: center;
     justify-content: center;
     padding: 0.75rem 1.5rem;
-    font-size: 0.975rem;
-    font-weight: 600;
-    text-decoration: none;
     border-radius: 0.5rem;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    font-weight: 600;
+    font-size: 0.975rem;
+    text-decoration: none;
     cursor: pointer;
+    transition:
+      background-color 0.2s ease,
+      transform 0.1s ease;
 
     &--primary {
       background-color: t.$color4;

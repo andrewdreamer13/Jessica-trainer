@@ -60,6 +60,7 @@
   }
 
   &__button {
+    text-align: center;
     @media (max-width: 480px) {
       display: block;
       margin: 0 auto;
