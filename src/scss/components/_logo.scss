@@ -7,6 +7,11 @@
   padding: 0 8px;
   color: t.$color4;
 
+  &:focus-visible {
+    outline: 2px solid t.$color3;
+    outline-offset: 5px;
+  }
+
   &__top {
     display: block;
     position: relative;

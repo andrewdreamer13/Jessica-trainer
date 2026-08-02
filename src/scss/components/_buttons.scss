@@ -1,29 +1,51 @@
 @use "../tools" as t;
 
 .button {
+  // isolation: isolate;
+  position: relative;
   padding: 15px 48px;
   background-color: t.$color3;
   color: t.$color4;
   font-weight: 600;
   font-size: 15px;
+  line-height: 1;
   font-family: t.$font2;
   letter-spacing: 0.01em;
-  line-height: 1;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
 
+  & span {
+    z-index: 2;
+    position: relative;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: t.$color4;
+    content: "";
+    transition: all 0.3s;
+  }
+
   @media (hover: hover) {
     &:hover {
-      background-color: t.$color4;
-      color: t.$color5;
+      color: t.$color3;
+    }
+    &:hover::after {
+      width: 100%;
     }
   }
 
-  &:active {
-      background-color: t.$color4;
-      color: t.$color5;
-    }
+  &:active::after {
+    width: 100%;
+  }
+
+  &:focus-visible {
+    outline: 2px solid t.$color3;
+    outline-offset: 5px;
+  }
 }
-
-

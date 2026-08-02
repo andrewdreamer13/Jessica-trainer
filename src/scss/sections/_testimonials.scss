@@ -76,7 +76,7 @@
 
   &__nav {
     @include t.flex-mix(flex-end, center, row, 15px);
-    padding-right: 20px;
+    padding: 8px 20px 8px 0;
 
     @media (max-width: 480px) {
       display: none;
@@ -110,6 +110,11 @@
 
     &:active .testimonials__icon {
       stroke: t.$color2;
+    }
+
+    &:focus-visible {
+      outline: 2px solid t.$color3;
+      outline-offset: 5px;
     }
   }
 

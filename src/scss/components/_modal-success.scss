@@ -1,57 +1,63 @@
 @use "../tools" as t;
 
 .success-modal {
-   @include t.fluid-prop('width',290,636,320,768);
+  @include t.fluid-prop("width", 290, 636, 320, 768);
   padding: 30px 15px 50px 15px;
-  background-color: t.$color1;
   border-radius: 6px;
-  box-shadow: 0 0 3px 3px t.$color2;
+  background-color: t.$color1;
 
   &__close-btn {
     position: absolute;
     top: -80px;
     right: 10px;
     padding: 15px;
+    border-radius: 8px;
+    background-color: t.$color1;
+    font-weight: 600;
     font-size: 35px;
     line-height: 1;
-    font-weight: 600;
-    border-radius: 8px;
-      background-color: t.$color1;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      box-shadow: 0 0 3px 3px t.$color2;
-    @media (hover:hover) {
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease;
+
+    @media (hover: hover) {
       &:hover {
         background-color: t.$color2;
       }
     }
 
-     &:active {
-        background-color: t.$color2;
-        transform: scale(0.95);
-      }
+    &:active {
+      transform: scale(0.95);
+      background-color: t.$color2;
+    }
+
+    &:focus-visible {
+      outline: 2px solid t.$color3;
+      outline-offset: 5px;
+    }
   }
 
   &__icon {
+    margin-bottom: 30px;
+    font-weight: 600;
     font-size: 100px;
     line-height: 1;
     text-align: center;
-    font-weight: 600;
-    margin-bottom: 30px;
   }
 
   &__title {
     font-size: 35px;
-    text-align: center;
     font-family: t.$font2;
+    text-align: center;
   }
 
   &__text {
-    font-size: 18px;
     max-width: 400px;
     margin: 0 auto;
+    font-size: 18px;
     font-family: t.$font3;
 
-    @media (max-width:480px) {
+    @media (max-width: 480px) {
       text-align: center;
     }
   }

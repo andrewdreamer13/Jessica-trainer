@@ -50,8 +50,12 @@
 
   &__link {
     font-weight: 600;
-    text-decoration: underline;
     text-underline-offset: 3px;
+
+    &:focus-visible {
+      outline: 2px solid t.$color3;
+      outline-offset: 2px;
+    }
   }
 
   &__form {
