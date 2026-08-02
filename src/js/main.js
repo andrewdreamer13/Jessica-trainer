@@ -9,7 +9,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import { phoneMasks } from "./data/phoneMasks.js";
-
 import { initPreloader } from "./components/preloader.js";
 import { initModal } from "./components/modalManager.js";
 import { initFocusManager } from "./services/focusManager.js";
@@ -17,6 +16,7 @@ import { initSliders, testimonialsSwiper } from "./components/sliders.js";
 import { initCookieBanner } from "./components/cookieBanner.js";
 import { initFormHandler } from "./forms/formHandler.js";
 import { splitTextIntoSpans } from "./services/splitText.js";
+import { initFirstScreenAnimation } from "./animations/firstScreenAnimation.js";
 import { initExpandableText } from "./services/expandableText.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initCookieBanner();
   initFormHandler("#contact-form");
   splitTextIntoSpans(".header__title");
+  initFirstScreenAnimation();
   initExpandableText("[data-expandable]", {
     onToggle: () => {
       if (!testimonialsSwiper) return;

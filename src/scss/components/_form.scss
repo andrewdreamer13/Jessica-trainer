@@ -49,10 +49,10 @@
     color: t.$color1;
     font-size: 18px;
 
-   &:focus-visible {
-    outline: 2px solid t.$color3;
-    outline-offset: 2px;
-  }
+    &:focus-visible {
+      outline: 1px solid rgba(t.$color2, 0.3);
+      outline-offset: 2px;
+    }
 
     &::placeholder {
       color: rgba(t.$color1, 0.5);
@@ -103,10 +103,10 @@
     line-height: 1.2;
     resize: none;
 
-   &:focus-visible {
-    outline: 2px solid t.$color3;
-    outline-offset: 2px;
-  }
+    &:focus-visible {
+      outline: 1px solid rgba(t.$color2, 0.3);
+      outline-offset: 2px;
+    }
 
     &::placeholder {
       color: rgba(t.$color1, 0.5);
@@ -120,6 +120,7 @@
 
   &__submit {
     padding: 15px 65px;
+    background-color: t.$color2;
     isolation: isolate;
 
     &::after {
@@ -135,9 +136,9 @@
     }
 
     &:focus-visible {
-    outline: 2px solid t.$color3;
-    outline-offset: 5px;
-  }
+      outline: 1px solid t.$color2;
+      outline-offset: 5px;
+    }
 
     @media (hover: hover) {
       &:hover {

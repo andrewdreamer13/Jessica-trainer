@@ -58,6 +58,15 @@
         fill: t.$color1;
       }
     }
+    &:active .footer__social-icon {
+      scale: 1.2;
+      fill: t.$color1;
+    }
+
+    &:focus-visible {
+      outline: 1px solid t.$color4;
+      outline-offset: 4px;
+    }
   }
 
   &__social-icon {
