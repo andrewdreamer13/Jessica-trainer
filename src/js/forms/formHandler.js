@@ -1,5 +1,3 @@
-
-
 import { phoneMasks } from "../data/phoneMasks.js";
 import { openModal } from "../components/modalManager.js";
 
@@ -236,53 +234,50 @@ async function handleFormSubmit(form) {
     form.querySelector('button[type="submit"]');
   const originalText = submitBtn ? submitBtn.innerHTML : "<span>Submit</span>";
 
-  
   if (submitBtn) {
-   submitBtn.innerHTML = "<span>Sending...</span>";
+    submitBtn.innerHTML = "<span>Sending...</span>";
     submitBtn.disabled = true;
   }
 
   const formData = new FormData(form);
 
-try {
-  const response = await fetch(
-    form.action || "https://api.web3forms.com/submit",
-    {
-      method: "POST",
-      headers: {
-        Accept: "application/json", // Явно просим JSON
+  try {
+    const response = await fetch(
+      form.action || "https://api.web3forms.com/submit",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json", // Явно просим JSON
+        },
+        body: formData,
       },
-      body: formData,
-    },
-  );
+    );
 
-  const data = await response.json();
+    const data = await response.json();
 
-  if (response.ok && data.success) {
-    form.reset();
-    form.querySelectorAll(".form__input-box").forEach((box) => {
-      box.classList.remove("_is-valid", "_is-invalid");
-    });
+    if (response.ok && data.success) {
+      form.reset();
+      form.querySelectorAll(".form__input-box").forEach((box) => {
+        box.classList.remove("_is-valid", "_is-invalid");
+      });
 
-    const modalId = form.getAttribute("data-modal-success");
-    const successModal = document.getElementById(modalId);
+      const modalId = form.getAttribute("data-modal-success");
+      const successModal = document.getElementById(modalId);
 
-    if (successModal) {
-      openModal(successModal); // Запустит открывание и GSAP без алертов!
+      if (successModal) {
+        openModal(successModal);
+      }
+    } else {
+      console.error("Web3Forms error:", data);
+      alert("Error: " + (data.message || "Something went wrong"));
     }
-  } else {
-    console.error("Web3Forms error:", data);
-    alert("Error: " + (data.message || "Something went wrong"));
-  }
-} catch (error) {
-  // ВЫВЕДЕМ НАСТОЯЩУЮ ОШИБКУ В КОНСОЛЬ, чтобы не гадать!
-  console.error("[FormHandler Fetch Error Details]:", error);
-  alert("Connection error. Please try again later.");
-} finally {
-  if (submitBtn) {
-    submitBtn.innerHTML = originalText;
-    submitBtn.disabled = false;
+  } catch (error) {
+    console.error("[FormHandler Fetch Error Details]:", error);
+    alert("Connection error. Please try again later.");
+  } finally {
+    if (submitBtn) {
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    }
   }
 }
-}
-

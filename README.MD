@@ -1,255 +1,60 @@
+# 🏋️ Jessica Trainer — Personal Trainer Landing Page
 
-# Static Sites Vite Starter 🚀
-
-> A professional, modular starter kit for building high-performance static websites with Vite, automated asset optimization, reusable UI modules, and a scalable project architecture.
-
----
-
-# ✨ Features
-
-- ⚡ **Vite 7+** with fast HMR and optimized production builds.
-- 🧩 **Component-based HTML** using `vite-plugin-html-inject`.
-- 🎨 **Modern SCSS architecture** with PostCSS and Autoprefixer.
-- 🖼 **Automatic image optimization**
-  - Converts `.jpg` and `.png` to **WebP**
-  - Preserves original files
-- 🔤 **Automatic font conversion**
-  - Converts `.ttf` to `.woff2`
-  - Supports nested folders
-- 🎯 **SVG Sprite generation**
-- 📦 **Lazy Inline SVG system**
-- 🌙 **FOUC-free dark/light theme switcher**
-- ♿ Accessibility helpers
-  - Focus trapping
-  - Body scroll locking
-  - Keyboard navigation
-  - ARIA support
-- 🚀 One-command GitHub Pages deployment.
+A modern, highly performant, and fully responsive landing page for a personal trainer. Built with a focus on fast load times, smooth UI animations (GSAP), and an accessible user experience (Accessibility & UI/UX).
 
 ---
 
-# 🛠 Included Modules
+## 🛠 Tech Stack
 
-### Lazy SVG Loader
-
-Loads inline SVGs from HTML templates without duplicating markup.
-
-**Usage**
-
-```html
-<div
-  data-svg-receiver
-  data-svg-id="icon-phone">
-</div>
-```
+- **Bundler & Tooling:** Vite, ES6+ Modules.
+- **Styling:** SCSS (BEM methodology), CSS Variables, Flexbox/Grid, custom `:hover` and `:focus-visible` state management.
+- **Animations:** GSAP (GreenSock), ScrollTrigger.
+- **Interactivity:** Native JavaScript, Web3Forms API (AJAX form submission), dynamic modal management.
+- **Optimization & SEO:** SVG Sprites, custom 404 page, Cookie Banner, structured meta tags.
 
 ---
 
-### Burger Menu
+## ✨ Features & Highlights
 
-Accessible mobile navigation with:
+### 1. 🎨 Design & UI/UX
 
-- body scroll locking
-- focus trap
-- Escape closing
-- backdrop closing
+- **Overhauled Hero Section:** Fully responsive layout with fluid typography and a flexible grid.
+- **Interactive States:** Carefully designed `:hover` and `:focus-visible` states across interactive elements (buttons, links, inputs) to ensure seamless keyboard navigation.
+- **Custom Components:** Styled cookie consent banner, customized 404 error page, and dynamic footer.
+- **SVG Sprites Setup:** Optimized icon management for social media links, arrows, and UI elements.
 
----
+### 2. ⚡ Dynamic Sections
 
-### Modal
+- **Services:** Responsive card layout featuring specialized background setups for mobile viewports.
+- **Expertise:** Modular section built with structured SCSS variables and custom grid rules.
+- **Testimonials:** Dynamic scrolling pagination with expandable text cards for long reviews.
 
-Reusable modal system featuring:
+### 3. 🎬 Advanced GSAP & ScrollTrigger Animations
 
-- data attribute triggers
-- focus management
-- Escape support
-- backdrop click closing
+- **First Screen Animation:** Smooth entrance timeline triggered on page load.
+- **Scroll-Driven Reveal Effects:** Sequential card reveal animations across _Expertise_, _Services_, and _Testimonials_ sections.
+- **Form & Footer Triggers:** Scroll-triggered appearance for the contact section and footer links.
+- **Success Modal Animations (`successAnimation.js`):** Custom `initSuccessOpenAnimation` and `initSuccessCloseAnimation` functions using GSAP timelines. Utilizes `scale` and `opacity` with automatic inline style cleanup (`clearProps`) to preserve CSS absolute centering without layout shifts.
 
----
+### 4. ✉️ Contact Form & Modal Lifecycle
 
-### Custom Select
-
-Accessible dropdown component supporting:
-
-- keyboard navigation
-- single-open mode
-- dynamic options
+- Integrated with **Web3Forms API** for seamless background form submissions (AJAX).
+- Safe JSON response parsing, error handling, and instant input validation clearing.
+- Modal state handled via **`modalManager.js`** (body scroll locking `body.lock`, accessibility state `aria-hidden`).
 
 ---
 
-### Tabs
-
-Accessible tabs with automatic ARIA attributes.
-
----
-
-### Sliders
-
-Ready-to-use Swiper integration.
-
----
-
-### Maps
-
-Supports:
-
-- Mapbox GL JS
-- iframe-based maps
-
----
-
-### Preloader
-
-Automatically hides after page load.
-
----
-
-### Scroll To Top Button
-
-Smooth scrolling back to the top.
-
----
-
-### Theme Switcher
-
-Supports:
-
-- system theme
-- localStorage persistence
-- zero flash on load
-
----
-
-# 📦 Tech Stack
-
-## Core
-
-- Vite
-- JavaScript (ES Modules)
-- Sass (SCSS)
-- PostCSS
-- Autoprefixer
-
-## Libraries
-
-- GSAP
-- Swiper
-- Mapbox GL JS
-- Plyr
-
----
-
-# 📁 Project Structure
+## 📁 Project Structure
 
 ```text
-.
-├── prebuild.js
-├── vite.config.js
-├── package.json
-└── src
-    ├── assets
-    │   ├── fonts
-    │   │   ├── raw
-    │   │   └── woff2
-    │   ├── img
-    │   │   ├── raw
-    │   │   └── webp
-    │   └── icons
-    ├── html
-    │   ├── partials
-    │   └── inline-icons
-    ├── js
-    │   ├── app.js
-    │   ├── modules
-    │   └── services
-    └── scss
-        ├── tools
-        ├── base
-        ├── components
-        ├── layouts
-        └── sections
+├── src/
+│   ├── assets/          # Images, fonts, SVG icons/sprites
+│   ├── scss/            # Variables, mixins, global styles, components (BEM)
+│   ├── js/
+│   │   ├── modules/     # JS modules (formHandler, modalManager, successAnimation, etc.)
+│   │   └── main.js      # Entry point
+│   └── index.html       # Primary HTML template with SEO configurations
+├── 404.html             # Custom 404 error page
+├── vite.config.js       # Vite configuration
+└── package.json
 ```
-
----
-
-# 🎨 SCSS Structure
-
-| Folder | Purpose |
-|---------|---------|
-| `tools/` | Variables, mixins and functions |
-| `base/` | Reset, typography, root variables |
-| `components/` | Reusable UI components |
-| `layouts/` | Header, footer and layout styles |
-| `sections/` | Page-specific blocks |
-
----
-
-# 🚀 Installation
-
-Clone the repository.
-
-```bash
-git clone https://github.com/andrewdreamer13/static-sites-vite-starter.git
-cd static-sites-vite-starter
-```
-
-(Optional) Start with a clean Git history.
-
-```bash
-rm -rf .git
-git init
-```
-
-Install dependencies.
-
-```bash
-npm install
-```
-
-Update the project name inside **package.json**.
-
----
-
-# 💻 Development
-
-Start the development server.
-
-```bash
-npm run dev
-```
-
-Build for production.
-
-```bash
-npm run build
-```
-
-Preview the production build.
-
-```bash
-npm run preview
-```
-
-Deploy to GitHub Pages.
-
-```bash
-npm run deploy
-```
-
----
-
-# ⚙️ npm Scripts
-
-| Command | Description |
-|----------|-------------|
-| `npm run dev` | Runs prebuild tasks and starts Vite |
-| `npm run build` | Creates a production build |
-| `npm run preview` | Serves the production build locally |
-| `npm run predeploy` | Builds the project for GitHub Pages |
-| `npm run deploy` | Deploys `dist/` to GitHub Pages |
-
----
-
-# 📄 License
-
-Feel free to use this starter for personal and commercial projects.

@@ -29,9 +29,6 @@
     transform: translate(-50%, -50%);
     opacity: 0;
     pointer-events: none;
-    // transition:
-    //   opacity 0.4s ease,
-    //   visibility 0.4s;
   }
   &__content--visible {
     visibility: visible;
