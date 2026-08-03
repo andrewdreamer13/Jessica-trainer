@@ -21,6 +21,7 @@ import { initExpandableText } from "./services/expandableText.js";
 import {initExpertiseAnimation} from "./animations/expertiseAnimation.js";
 import {initServicesAnimation} from "./animations/servicesAnimation.js";
 import {initTestimonialsAnimation} from "./animations/testimonialsAnimation.js";
+import {initContactAnimation} from "./animations/contactAnimation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initPreloader();
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initExpertiseAnimation();
   initServicesAnimation();
   initTestimonialsAnimation();
+   initContactAnimation();
   initExpandableText("[data-expandable]", {
     onToggle: () => {
       if (!testimonialsSwiper) return;
