@@ -19,6 +19,7 @@ import { splitTextIntoSpans } from "./services/splitText.js";
 import { initFirstScreenAnimation } from "./animations/firstScreenAnimation.js";
 import { initExpandableText } from "./services/expandableText.js";
 import {initExpertiseAnimation} from "./animations/expertiseAnimation.js";
+import {initServicesAnimation} from "./animations/servicesAnimation.js"
 
 document.addEventListener("DOMContentLoaded", () => {
   initPreloader();
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   splitTextIntoSpans(".header__title");
   initFirstScreenAnimation();
   initExpertiseAnimation();
+  initServicesAnimation();
   initExpandableText("[data-expandable]", {
     onToggle: () => {
       if (!testimonialsSwiper) return;

@@ -1,7 +1,7 @@
 @use "../tools" as t;
 
 .button {
-  // isolation: isolate;
+  display: inline-block;
   position: relative;
   padding: 15px 48px;
   background-color: t.$color3;
