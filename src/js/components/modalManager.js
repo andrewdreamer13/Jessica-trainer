@@ -1,7 +1,8 @@
-
-
-
 import { openScope, closeScope } from "../services/focusManager.js";
+import {
+  initSuccessOpenAnimation,
+  initSuccessCloseAnimation,
+} from "../animations/successAnimation.js";
 
 const body = document.body;
 let activeModal = null;
@@ -19,22 +20,38 @@ export const openModal = (modal) => {
 
   activeModal = modal;
   openScope(modal);
+
+  if (modal.id === "modal-success") {
+    initSuccessOpenAnimation(modal);
+  }
 };
 
 export const closeModal = () => {
   if (!activeModal) return;
 
-  const content = activeModal.querySelector(".modal__content");
+  const currentModal = activeModal;
+  const content = currentModal.querySelector(".modal__content");
 
-  activeModal.classList.remove("modal--visible");
-  if (content) {
-    content.classList.remove("modal__content--visible");
+  const finalizeClose = () => {
+    currentModal.classList.remove("modal--visible");
+    if (content) {
+      content.classList.remove("modal__content--visible");
+    }
+    currentModal.setAttribute("aria-hidden", "true");
+    body.classList.remove("lock");
+
+    closeScope();
+  };
+
+  if (currentModal.id === "modal-success") {
+    initSuccessCloseAnimation(currentModal, () => {
+      finalizeClose();
+      activeModal = null;
+    });
+  } else {
+    finalizeClose();
+    activeModal = null;
   }
-  activeModal.setAttribute("aria-hidden", "true");
-  body.classList.remove("lock");
-
-  closeScope();
-  activeModal = null;
 };
 
 export const initModal = () => {
@@ -58,7 +75,11 @@ export const initModal = () => {
 
   document.querySelectorAll(".modal").forEach((modal) => {
     modal.addEventListener("click", (e) => {
-      if (e.target === modal || e.target.closest(".success-modal__close-btn")) {
+      if (
+        e.target === modal ||
+        e.target.closest(".success-modal__close-btn") ||
+        e.target.closest(".modal__close-btn")
+      ) {
         closeModal();
       }
     });
