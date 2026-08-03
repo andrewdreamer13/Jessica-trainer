@@ -1,5 +1,3 @@
-
-
 import { defineConfig } from "vite";
 import path from "path";
 import viteImagemin from "vite-plugin-imagemin";
@@ -14,11 +12,10 @@ import Sitemap from "vite-plugin-sitemap";
 const rootFolder = path.basename(path.resolve());
 
 export default defineConfig(({ mode }) => {
-  
   const isGH = mode === "github";
 
   return {
-    base: isGH ? `/${rootFolder}/` : "./",
+    base: isGH ? `/Jessica-trainer/` : "./",
 
     plugins: [
       injectHTML(),
@@ -115,4 +112,3 @@ export default defineConfig(({ mode }) => {
     },
   };
 });
-
