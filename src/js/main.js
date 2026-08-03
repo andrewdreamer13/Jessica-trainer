@@ -18,10 +18,11 @@ import { initFormHandler } from "./forms/formHandler.js";
 import { splitTextIntoSpans } from "./services/splitText.js";
 import { initFirstScreenAnimation } from "./animations/firstScreenAnimation.js";
 import { initExpandableText } from "./services/expandableText.js";
-import {initExpertiseAnimation} from "./animations/expertiseAnimation.js";
-import {initServicesAnimation} from "./animations/servicesAnimation.js";
-import {initTestimonialsAnimation} from "./animations/testimonialsAnimation.js";
-import {initContactAnimation} from "./animations/contactAnimation.js";
+import { initExpertiseAnimation } from "./animations/expertiseAnimation.js";
+import { initServicesAnimation } from "./animations/servicesAnimation.js";
+import { initTestimonialsAnimation } from "./animations/testimonialsAnimation.js";
+import { initContactAnimation } from "./animations/contactAnimation.js";
+import { initFooterAnimation } from "./animations/footerAnimation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initPreloader();
@@ -35,7 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initExpertiseAnimation();
   initServicesAnimation();
   initTestimonialsAnimation();
-   initContactAnimation();
+  initContactAnimation();
+  initFooterAnimation();
   initExpandableText("[data-expandable]", {
     onToggle: () => {
       if (!testimonialsSwiper) return;
