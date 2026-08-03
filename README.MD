@@ -42,19 +42,4 @@ A modern, highly performant, and fully responsive landing page for a personal tr
 - Safe JSON response parsing, error handling, and instant input validation clearing.
 - Modal state handled via **`modalManager.js`** (body scroll locking `body.lock`, accessibility state `aria-hidden`).
 
----
 
-## 📁 Project Structure
-
-```text
-├── src/
-│   ├── assets/          # Images, fonts, SVG icons/sprites
-│   ├── scss/            # Variables, mixins, global styles, components (BEM)
-│   ├── js/
-│   │   ├── modules/     # JS modules (formHandler, modalManager, successAnimation, etc.)
-│   │   └── main.js      # Entry point
-│   └── index.html       # Primary HTML template with SEO configurations
-├── 404.html             # Custom 404 error page
-├── vite.config.js       # Vite configuration
-└── package.json
-```

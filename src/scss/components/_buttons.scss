@@ -40,6 +40,10 @@
     }
   }
 
+  &:active {
+    color: t.$color3;
+  }
+
   &:active::after {
     width: 100%;
   }
