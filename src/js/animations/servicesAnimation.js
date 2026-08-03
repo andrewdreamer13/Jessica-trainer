@@ -8,19 +8,19 @@ export const initServicesAnimation = () => {
   if (!section) return;
 
   const title = section.querySelector(".services__title");
+  const content = section.querySelector(".services__content");
   const paragraphs = section.querySelectorAll(".services__text");
   const button = section.querySelector(".services__button");
 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "top 75%",
-      toggleActions: "play none none none",
-    },
+  const createTrigger = (triggerEl, start = "top 85%") => ({
+    trigger: triggerEl,
+    start: start,
+    toggleActions: "play none none none",
   });
 
   if (title) {
-    tl.from(title, {
+    gsap.from(title, {
+      scrollTrigger: createTrigger(title),
       duration: 0.8,
       autoAlpha: 0,
       y: 30,
@@ -28,18 +28,18 @@ export const initServicesAnimation = () => {
     });
   }
 
-  if (paragraphs.length >= 2) {
-    tl.from(
-      paragraphs[0],
-      {
+  if (paragraphs.length >= 2 && content) {
+    const paragraphsTl = gsap.timeline({
+      scrollTrigger: createTrigger(content, "top 80%"),
+    });
+
+    paragraphsTl
+      .from(paragraphs[0], {
         duration: 0.8,
         autoAlpha: 0,
         x: -40,
         ease: "power3.out",
-      },
-      "-=0.4",
-    )
-
+      })
       .from(
         paragraphs[1],
         {
@@ -51,7 +51,8 @@ export const initServicesAnimation = () => {
         "-=0.6",
       );
   } else if (paragraphs.length) {
-    tl.from(paragraphs, {
+    gsap.from(paragraphs, {
+      scrollTrigger: createTrigger(content || paragraphs[0]),
       duration: 0.8,
       autoAlpha: 0,
       y: 30,
@@ -60,15 +61,12 @@ export const initServicesAnimation = () => {
   }
 
   if (button) {
-    tl.from(
-      button,
-      {
-        duration: 0.8,
-        autoAlpha: 0,
-        y: 30,
-        ease: "power3.out",
-      },
-      "-=0.4",
-    );
+    gsap.from(button, {
+      scrollTrigger: createTrigger(button, "top 90%"),
+      duration: 0.8,
+      autoAlpha: 0,
+      y: 30,
+      ease: "power3.out",
+    });
   }
 };

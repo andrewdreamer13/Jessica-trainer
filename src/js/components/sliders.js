@@ -1,5 +1,6 @@
 import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
+import gsap from "gsap";
 import { updatePaginationPosition } from "../services/dynamicPagination";
 
 export let testimonialsSwiper = null;
@@ -28,6 +29,25 @@ const initTestimonialsSlider = () => {
       init: (swiper) => updatePaginationPosition(swiper),
       slideChange: (swiper) => updatePaginationPosition(swiper),
       resize: (swiper) => updatePaginationPosition(swiper),
+      slideChangeTransitionStart: function () {
+        
+        const activeSlide = this.slides[this.activeIndex];
+        const quote = activeSlide.querySelector(".testimonials__text");
+        const author = activeSlide.querySelector(".testimonials__author");
+
+        gsap.fromTo(
+          [quote, author].filter(Boolean),
+          { autoAlpha: 0, y: 20 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.5,
+            delay: 0.5,
+            stagger: 0.2,
+            ease: "power2.out",
+          },
+        );
+      },
     },
   });
 
