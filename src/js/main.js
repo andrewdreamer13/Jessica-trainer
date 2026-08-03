@@ -18,6 +18,7 @@ import { initFormHandler } from "./forms/formHandler.js";
 import { splitTextIntoSpans } from "./services/splitText.js";
 import { initFirstScreenAnimation } from "./animations/firstScreenAnimation.js";
 import { initExpandableText } from "./services/expandableText.js";
+import {initExpertiseAnimation} from "./animations/expertiseAnimation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initPreloader();
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initFormHandler("#contact-form");
   splitTextIntoSpans(".header__title");
   initFirstScreenAnimation();
+  initExpertiseAnimation();
   initExpandableText("[data-expandable]", {
     onToggle: () => {
       if (!testimonialsSwiper) return;
