@@ -15,6 +15,10 @@ const initTestimonialsSlider = () => {
     slidesPerView: 1,
     spaceBetween: 0,
     autoHeight: true,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
 
     pagination: {
       el: ".swiper-pagination",
@@ -30,7 +34,6 @@ const initTestimonialsSlider = () => {
       slideChange: (swiper) => updatePaginationPosition(swiper),
       resize: (swiper) => updatePaginationPosition(swiper),
       slideChangeTransitionStart: function () {
-        
         const activeSlide = this.slides[this.activeIndex];
         const quote = activeSlide.querySelector(".testimonials__text");
         const author = activeSlide.querySelector(".testimonials__author");

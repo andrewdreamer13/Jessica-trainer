@@ -23,6 +23,8 @@ import { initServicesAnimation } from "./animations/servicesAnimation.js";
 import { initTestimonialsAnimation } from "./animations/testimonialsAnimation.js";
 import { initContactAnimation } from "./animations/contactAnimation.js";
 import { initFooterAnimation } from "./animations/footerAnimation.js";
+import { initCurrentYear } from "./helpers/currentYear.js";
+
 
 document.addEventListener("DOMContentLoaded", () => {
   initPreloader();
@@ -38,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initTestimonialsAnimation();
   initContactAnimation();
   initFooterAnimation();
+   initCurrentYear();
   initExpandableText("[data-expandable]", {
     onToggle: () => {
       if (!testimonialsSwiper) return;
