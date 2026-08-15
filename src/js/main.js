@@ -24,7 +24,8 @@ import { initTestimonialsAnimation } from "./animations/testimonialsAnimation.js
 import { initContactAnimation } from "./animations/contactAnimation.js";
 import { initFooterAnimation } from "./animations/footerAnimation.js";
 import { initCurrentYear } from "./helpers/currentYear.js";
-
+import { initSyncDataAttrWithText } from "./helpers/syncDataAttrWithText.js";
+import { initLongTextWatcher } from "./helpers/longTextWatcher.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initPreloader();
@@ -40,7 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
   initTestimonialsAnimation();
   initContactAnimation();
   initFooterAnimation();
-   initCurrentYear();
+  initCurrentYear();
+  initSyncDataAttrWithText(".nav__link", "text");
+  initSyncDataAttrWithText(".footer__author", "text");
+  initLongTextWatcher(".word", 9, "is-long");
   initExpandableText("[data-expandable]", {
     onToggle: () => {
       if (!testimonialsSwiper) return;
