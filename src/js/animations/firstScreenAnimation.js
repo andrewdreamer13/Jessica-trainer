@@ -49,3 +49,4 @@ export const initFirstScreenAnimation = () => {
       "-=0.9",
     );
 };
+
